@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7B119FE8182F7794005322D4 /* Star.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B119FE6182F7794005322D4 /* Star.png */; };
+		7B119FE9182F7794005322D4 /* Star@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B119FE7182F7794005322D4 /* Star@2x.png */; };
+		7B119FEC182F9A89005322D4 /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B119FEA182F9A89005322D4 /* first.png */; };
+		7B119FED182F9A89005322D4 /* first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B119FEB182F9A89005322D4 /* first@2x.png */; };
 		7B645014182EFC1100FD87FB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B645013182EFC1100FD87FB /* Foundation.framework */; };
 		7B645016182EFC1100FD87FB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B645015182EFC1100FD87FB /* CoreGraphics.framework */; };
 		7B645018182EFC1100FD87FB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B645017182EFC1100FD87FB /* UIKit.framework */; };
@@ -21,6 +25,9 @@
 		7B645035182EFC1200FD87FB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B645017182EFC1100FD87FB /* UIKit.framework */; };
 		7B64503D182EFC1200FD87FB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7B64503B182EFC1200FD87FB /* InfoPlist.strings */; };
 		7B64503F182EFC1200FD87FB /* UnipolesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B64503E182EFC1200FD87FB /* UnipolesTests.m */; };
+		7B64504A182EFE0F00FD87FB /* LHViewControllerMain.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B645049182EFE0F00FD87FB /* LHViewControllerMain.m */; };
+		7B64504D182EFF4300FD87FB /* LHViewControllerEasy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B64504C182EFF4300FD87FB /* LHViewControllerEasy.m */; };
+		7BAF6D02182FBECF003B555F /* LHDataLevels.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BAF6D01182FBECF003B555F /* LHDataLevels.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +41,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7B119FE6182F7794005322D4 /* Star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Star.png; sourceTree = "<group>"; };
+		7B119FE7182F7794005322D4 /* Star@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Star@2x.png"; sourceTree = "<group>"; };
+		7B119FEA182F9A89005322D4 /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = first.png; path = Images.xcassets/first.imageset/first.png; sourceTree = "<group>"; };
+		7B119FEB182F9A89005322D4 /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "first@2x.png"; path = "Images.xcassets/first.imageset/first@2x.png"; sourceTree = "<group>"; };
 		7B645010182EFC1100FD87FB /* Unipoles.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Unipoles.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B645013182EFC1100FD87FB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		7B645015182EFC1100FD87FB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -53,6 +64,12 @@
 		7B64503A182EFC1200FD87FB /* UnipolesTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "UnipolesTests-Info.plist"; sourceTree = "<group>"; };
 		7B64503C182EFC1200FD87FB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		7B64503E182EFC1200FD87FB /* UnipolesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UnipolesTests.m; sourceTree = "<group>"; };
+		7B645048182EFE0F00FD87FB /* LHViewControllerMain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHViewControllerMain.h; sourceTree = "<group>"; };
+		7B645049182EFE0F00FD87FB /* LHViewControllerMain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHViewControllerMain.m; sourceTree = "<group>"; };
+		7B64504B182EFF4300FD87FB /* LHViewControllerEasy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHViewControllerEasy.h; sourceTree = "<group>"; };
+		7B64504C182EFF4300FD87FB /* LHViewControllerEasy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHViewControllerEasy.m; sourceTree = "<group>"; };
+		7BAF6D00182FBECF003B555F /* LHDataLevels.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHDataLevels.h; sourceTree = "<group>"; };
+		7BAF6D01182FBECF003B555F /* LHDataLevels.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHDataLevels.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +132,12 @@
 				7B645022182EFC1100FD87FB /* LHAppDelegate.h */,
 				7B645023182EFC1100FD87FB /* LHAppDelegate.m */,
 				7B645025182EFC1100FD87FB /* Main.storyboard */,
+				7BAF6D00182FBECF003B555F /* LHDataLevels.h */,
+				7BAF6D01182FBECF003B555F /* LHDataLevels.m */,
+				7B64504B182EFF4300FD87FB /* LHViewControllerEasy.h */,
+				7B64504C182EFF4300FD87FB /* LHViewControllerEasy.m */,
+				7B645048182EFE0F00FD87FB /* LHViewControllerMain.h */,
+				7B645049182EFE0F00FD87FB /* LHViewControllerMain.m */,
 				7B645028182EFC1100FD87FB /* LHViewController.h */,
 				7B645029182EFC1100FD87FB /* LHViewController.m */,
 				7B64502B182EFC1100FD87FB /* Images.xcassets */,
@@ -126,6 +149,10 @@
 		7B64501A182EFC1100FD87FB /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				7B119FEA182F9A89005322D4 /* first.png */,
+				7B119FEB182F9A89005322D4 /* first@2x.png */,
+				7B119FE6182F7794005322D4 /* Star.png */,
+				7B119FE7182F7794005322D4 /* Star@2x.png */,
 				7B64501B182EFC1100FD87FB /* Unipoles-Info.plist */,
 				7B64501C182EFC1100FD87FB /* InfoPlist.strings */,
 				7B64501F182EFC1100FD87FB /* main.m */,
@@ -229,9 +256,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B119FEC182F9A89005322D4 /* first.png in Resources */,
 				7B64502C182EFC1100FD87FB /* Images.xcassets in Resources */,
+				7B119FE8182F7794005322D4 /* Star.png in Resources */,
+				7B119FE9182F7794005322D4 /* Star@2x.png in Resources */,
 				7B64501E182EFC1100FD87FB /* InfoPlist.strings in Resources */,
 				7B645027182EFC1100FD87FB /* Main.storyboard in Resources */,
+				7B119FED182F9A89005322D4 /* first@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -250,7 +281,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7BAF6D02182FBECF003B555F /* LHDataLevels.m in Sources */,
 				7B645024182EFC1100FD87FB /* LHAppDelegate.m in Sources */,
+				7B64504A182EFE0F00FD87FB /* LHViewControllerMain.m in Sources */,
+				7B64504D182EFF4300FD87FB /* LHViewControllerEasy.m in Sources */,
 				7B645020182EFC1100FD87FB /* main.m in Sources */,
 				7B64502A182EFC1100FD87FB /* LHViewController.m in Sources */,
 			);
@@ -461,6 +495,7 @@
 				7B645044182EFC1200FD87FB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7B645045182EFC1200FD87FB /* Build configuration list for PBXNativeTarget "UnipolesTests" */ = {
 			isa = XCConfigurationList;
@@ -469,6 +504,7 @@
 				7B645047182EFC1200FD87FB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
