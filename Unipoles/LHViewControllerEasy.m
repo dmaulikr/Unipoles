@@ -29,166 +29,6 @@ NSNumber *magnetOnTile;
 - (void)viewDidLoad
 {
     [self initializeBoardToStartPlaying];
-    /////////////////////////////////////////    Button11.imageView.hidden = YES;
-    /*
-    Button11.imageView.hidden = YES;
-    Button12.imageView.hidden = YES;
-    Button13.imageView.hidden = YES;
-    Button14.imageView.hidden = YES;
-    Button21.imageView.hidden = YES;
-    Button22.imageView.hidden = YES;
-    Button23.imageView.hidden = YES;
-    Button24.imageView.hidden = YES;
-    Button31.imageView.hidden = YES;
-    Button32.imageView.hidden = YES;
-    Button33.imageView.hidden = YES;
-    Button34.imageView.hidden = YES;
-    Button41.imageView.hidden = YES;
-    Button42.imageView.hidden = YES;
-    Button43.imageView.hidden = YES;
-    Button44.imageView.hidden = YES;
-    
-    expectedMagnetCountInRow1 = 0;
-    expectedMagnetCountInRow2 = 0;
-    expectedMagnetCountInRow3 = 0;
-    expectedMagnetCountInRow4 = 0;
-    
-    expectedMagnetCountInColumn1 = 0;
-    expectedMagnetCountInColumn2 = 0;
-    expectedMagnetCountInColumn3 = 0;
-    expectedMagnetCountInColumn4 = 0;
-    /////////////////////////////////////////
-    
-    for(int j=0;j<col;j++){
-        expectedMagnetCountInRow1+=row1MagnetMap[j];
-        expectedMagnetCountInRow2+=row2MagnetMap[j];
-        expectedMagnetCountInRow3+=row3MagnetMap[j];
-        expectedMagnetCountInRow4+=row4MagnetMap[j];
-
-        if(j==0) {
-            expectedMagnetCountInColumn1+=row1MagnetMap[j];
-            expectedMagnetCountInColumn1+=row2MagnetMap[j];
-            expectedMagnetCountInColumn1+=row3MagnetMap[j];
-            expectedMagnetCountInColumn1+=row4MagnetMap[j];
-            
-            if(row1MetalMap[j] == 1){
-                UIImage *buttonImage = [UIImage imageNamed:@"star.png"];
-                [Button11 setImage:buttonImage forState:UIControlStateNormal];
-                [self.view addSubview:Button11];
-            }
-            if(row2MetalMap[j] == 1){
-                UIImage *buttonImage = [UIImage imageNamed:@"star.png"];
-                [Button21 setImage:buttonImage forState:UIControlStateNormal];
-                [self.view addSubview:Button21];
-            }
-            if(row3MetalMap[j] == 1){
-                UIImage *buttonImage = [UIImage imageNamed:@"star.png"];
-                [Button31 setImage:buttonImage forState:UIControlStateNormal];
-                [self.view addSubview:Button31];
-            }
-            if(row4MetalMap[j] == 1){
-                UIImage *buttonImage = [UIImage imageNamed:@"star.png"];
-                [Button41 setImage:buttonImage forState:UIControlStateNormal];
-                [self.view addSubview:Button41];
-            }
-        }
-        if(j==1) {
-            expectedMagnetCountInColumn2+=row1MagnetMap[j];
-            expectedMagnetCountInColumn2+=row2MagnetMap[j];
-            expectedMagnetCountInColumn2+=row3MagnetMap[j];
-            expectedMagnetCountInColumn2+=row4MagnetMap[j];
-            
-            if(row1MetalMap[j] == 1){
-                UIImage *buttonImage = [UIImage imageNamed:@"star.png"];
-                [Button12 setImage:buttonImage forState:UIControlStateNormal];
-                [self.view addSubview:Button12];
-            }
-            if(row2MetalMap[j] == 1){
-                UIImage *buttonImage = [UIImage imageNamed:@"star.png"];
-                [Button22 setImage:buttonImage forState:UIControlStateNormal];
-                [self.view addSubview:Button22];
-            }
-            if(row3MetalMap[j] == 1){
-                UIImage *buttonImage = [UIImage imageNamed:@"star.png"];
-                [Button32 setImage:buttonImage forState:UIControlStateNormal];
-                [self.view addSubview:Button32];
-            }
-            if(row4MetalMap[j] == 1){
-                UIImage *buttonImage = [UIImage imageNamed:@"star.png"];
-                [Button42 setImage:buttonImage forState:UIControlStateNormal];
-                [self.view addSubview:Button42];
-            }
-
-        }
-        if(j==2) {
-            expectedMagnetCountInColumn3+=row1MagnetMap[j];
-            expectedMagnetCountInColumn3+=row2MagnetMap[j];
-            expectedMagnetCountInColumn3+=row3MagnetMap[j];
-            expectedMagnetCountInColumn3+=row4MagnetMap[j];
-            
-            if(row1MetalMap[j] == 1){
-                UIImage *buttonImage = [UIImage imageNamed:@"star.png"];
-                [Button13 setImage:buttonImage forState:UIControlStateNormal];
-                [self.view addSubview:Button13];
-            }
-            if(row2MetalMap[j] == 1){
-                UIImage *buttonImage = [UIImage imageNamed:@"star.png"];
-                [Button23 setImage:buttonImage forState:UIControlStateNormal];
-                [self.view addSubview:Button23];
-            }
-            if(row3MetalMap[j] == 1){
-                UIImage *buttonImage = [UIImage imageNamed:@"star.png"];
-                [Button33 setImage:buttonImage forState:UIControlStateNormal];
-                [self.view addSubview:Button33];
-            }
-            if(row4MetalMap[j] == 1){
-                UIImage *buttonImage = [UIImage imageNamed:@"star.png"];
-                [Button43 setImage:buttonImage forState:UIControlStateNormal];
-                [self.view addSubview:Button43];
-            }
-
-        }
-        if(j==3) {
-            expectedMagnetCountInColumn4+=row1MagnetMap[j];
-            expectedMagnetCountInColumn4+=row2MagnetMap[j];
-            expectedMagnetCountInColumn4+=row3MagnetMap[j];
-            expectedMagnetCountInColumn4+=row4MagnetMap[j];
-            
-            if(row1MetalMap[j] == 1){
-                UIImage *buttonImage = [UIImage imageNamed:@"star.png"];
-                [Button14 setImage:buttonImage forState:UIControlStateNormal];
-                [self.view addSubview:Button14];
-            }
-            if(row2MetalMap[j] == 1){
-                UIImage *buttonImage = [UIImage imageNamed:@"star.png"];
-                [Button24 setImage:buttonImage forState:UIControlStateNormal];
-                [self.view addSubview:Button24];
-            }
-            if(row3MetalMap[j] == 1){
-                UIImage *buttonImage = [UIImage imageNamed:@"star.png"];
-                [Button34 setImage:buttonImage forState:UIControlStateNormal];
-                [self.view addSubview:Button34];
-            }
-            if(row4MetalMap[j] == 1){
-                UIImage *buttonImage = [UIImage imageNamed:@"star.png"];
-                [Button44 setImage:buttonImage forState:UIControlStateNormal];
-                [self.view addSubview:Button44];
-            }
-
-        }
-
-    }
-    
-    SumOfMagnetInColumn1.text = [NSString stringWithFormat:@"%i", expectedMagnetCountInColumn1];
-    SumOfMagnetInColumn2.text = [NSString stringWithFormat:@"%i", expectedMagnetCountInColumn2];
-    SumOfMagnetInColumn3.text = [NSString stringWithFormat:@"%i", expectedMagnetCountInColumn3];
-    SumOfMagnetInColumn4.text = [NSString stringWithFormat:@"%i", expectedMagnetCountInColumn4];
-
-    SumOfMagnetInRow1.text = [NSString stringWithFormat:@"%i", expectedMagnetCountInRow1];
-    SumOfMagnetInRow2.text = [NSString stringWithFormat:@"%i", expectedMagnetCountInRow2];
-    SumOfMagnetInRow3.text = [NSString stringWithFormat:@"%i", expectedMagnetCountInRow3];
-    SumOfMagnetInRow4.text = [NSString stringWithFormat:@"%i", expectedMagnetCountInRow4];
-    */
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
 }
@@ -452,34 +292,6 @@ NSNumber *magnetOnTile;
 }
 
 -(void)initializeBoardToStartPlaying {
-/*
-    Button11.imageView.hidden = YES;
-    Button12.imageView.hidden = YES;
-    Button13.imageView.hidden = YES;
-    Button14.imageView.hidden = YES;
-    Button21.imageView.hidden = YES;
-    Button22.imageView.hidden = YES;
-    Button23.imageView.hidden = YES;
-    Button24.imageView.hidden = YES;
-    Button31.imageView.hidden = YES;
-    Button32.imageView.hidden = YES;
-    Button33.imageView.hidden = YES;
-    Button34.imageView.hidden = YES;
-    Button41.imageView.hidden = YES;
-    Button42.imageView.hidden = YES;
-    Button43.imageView.hidden = YES;
-    Button44.imageView.hidden = YES;
-    
-    expectedMagnetCountInRow1 = 0;
-    expectedMagnetCountInRow2 = 0;
-    expectedMagnetCountInRow3 = 0;
-    expectedMagnetCountInRow4 = 0;
-    
-    expectedMagnetCountInColumn1 = 0;
-    expectedMagnetCountInColumn2 = 0;
-    expectedMagnetCountInColumn3 = 0;
-    expectedMagnetCountInColumn4 = 0;
- */
     
     Button11.imageView.hidden = YES;
     Button12.imageView.hidden = YES;
@@ -507,7 +319,6 @@ NSNumber *magnetOnTile;
     expectedMagnetCountInColumn2 = 0;
     expectedMagnetCountInColumn3 = 0;
     expectedMagnetCountInColumn4 = 0;
-    /////////////////////////////////////////
     
     for(int j=0;j<col;j++){
         expectedMagnetCountInRow1+=row1MagnetMap[j];
@@ -522,24 +333,28 @@ NSNumber *magnetOnTile;
             expectedMagnetCountInColumn1+=row4MagnetMap[j];
             
             if(row1MetalMap[j] == 1){
-                UIImage *buttonImage = [UIImage imageNamed:@"star.png"];
+                UIImage *buttonImage = [UIImage imageNamed:@"Star.png"];
                 [Button11 setImage:buttonImage forState:UIControlStateNormal];
                 [self.view addSubview:Button11];
+                Button11.imageView.hidden = NO;
             }
             if(row2MetalMap[j] == 1){
-                UIImage *buttonImage = [UIImage imageNamed:@"star.png"];
+                UIImage *buttonImage = [UIImage imageNamed:@"Star.png"];
                 [Button21 setImage:buttonImage forState:UIControlStateNormal];
                 [self.view addSubview:Button21];
+                Button21.imageView.hidden = NO;
             }
             if(row3MetalMap[j] == 1){
-                UIImage *buttonImage = [UIImage imageNamed:@"star.png"];
+                UIImage *buttonImage = [UIImage imageNamed:@"Star.png"];
                 [Button31 setImage:buttonImage forState:UIControlStateNormal];
                 [self.view addSubview:Button31];
+                Button31.imageView.hidden = NO;
             }
             if(row4MetalMap[j] == 1){
-                UIImage *buttonImage = [UIImage imageNamed:@"star.png"];
+                UIImage *buttonImage = [UIImage imageNamed:@"Star.png"];
                 [Button41 setImage:buttonImage forState:UIControlStateNormal];
                 [self.view addSubview:Button41];
+                Button41.imageView.hidden = NO;
             }
         }
         if(j==1) {
@@ -549,24 +364,28 @@ NSNumber *magnetOnTile;
             expectedMagnetCountInColumn2+=row4MagnetMap[j];
             
             if(row1MetalMap[j] == 1){
-                UIImage *buttonImage = [UIImage imageNamed:@"star.png"];
+                UIImage *buttonImage = [UIImage imageNamed:@"Star.png"];
                 [Button12 setImage:buttonImage forState:UIControlStateNormal];
                 [self.view addSubview:Button12];
+                Button12.imageView.hidden = NO;
             }
             if(row2MetalMap[j] == 1){
-                UIImage *buttonImage = [UIImage imageNamed:@"star.png"];
+                UIImage *buttonImage = [UIImage imageNamed:@"Star.png"];
                 [Button22 setImage:buttonImage forState:UIControlStateNormal];
                 [self.view addSubview:Button22];
+                Button22.imageView.hidden = NO;
             }
             if(row3MetalMap[j] == 1){
-                UIImage *buttonImage = [UIImage imageNamed:@"star.png"];
+                UIImage *buttonImage = [UIImage imageNamed:@"Star.png"];
                 [Button32 setImage:buttonImage forState:UIControlStateNormal];
                 [self.view addSubview:Button32];
+                Button32.imageView.hidden = NO;
             }
             if(row4MetalMap[j] == 1){
-                UIImage *buttonImage = [UIImage imageNamed:@"star.png"];
+                UIImage *buttonImage = [UIImage imageNamed:@"Star.png"];
                 [Button42 setImage:buttonImage forState:UIControlStateNormal];
                 [self.view addSubview:Button42];
+                Button42.imageView.hidden = NO;
             }
             
         }
@@ -577,24 +396,28 @@ NSNumber *magnetOnTile;
             expectedMagnetCountInColumn3+=row4MagnetMap[j];
             
             if(row1MetalMap[j] == 1){
-                UIImage *buttonImage = [UIImage imageNamed:@"star.png"];
+                UIImage *buttonImage = [UIImage imageNamed:@"Star.png"];
                 [Button13 setImage:buttonImage forState:UIControlStateNormal];
                 [self.view addSubview:Button13];
+                Button13.imageView.hidden = NO;
             }
             if(row2MetalMap[j] == 1){
-                UIImage *buttonImage = [UIImage imageNamed:@"star.png"];
+                UIImage *buttonImage = [UIImage imageNamed:@"Star.png"];
                 [Button23 setImage:buttonImage forState:UIControlStateNormal];
                 [self.view addSubview:Button23];
+                Button23.imageView.hidden = NO;
             }
             if(row3MetalMap[j] == 1){
-                UIImage *buttonImage = [UIImage imageNamed:@"star.png"];
+                UIImage *buttonImage = [UIImage imageNamed:@"Star.png"];
                 [Button33 setImage:buttonImage forState:UIControlStateNormal];
                 [self.view addSubview:Button33];
+                Button33.imageView.hidden = NO;
             }
             if(row4MetalMap[j] == 1){
-                UIImage *buttonImage = [UIImage imageNamed:@"star.png"];
+                UIImage *buttonImage = [UIImage imageNamed:@"Star.png"];
                 [Button43 setImage:buttonImage forState:UIControlStateNormal];
                 [self.view addSubview:Button43];
+                Button43.imageView.hidden = NO;
             }
             
         }
@@ -605,28 +428,30 @@ NSNumber *magnetOnTile;
             expectedMagnetCountInColumn4+=row4MagnetMap[j];
             
             if(row1MetalMap[j] == 1){
-                UIImage *buttonImage = [UIImage imageNamed:@"star.png"];
+                UIImage *buttonImage = [UIImage imageNamed:@"Star.png"];
                 [Button14 setImage:buttonImage forState:UIControlStateNormal];
                 [self.view addSubview:Button14];
+                Button14.imageView.hidden = NO;
             }
             if(row2MetalMap[j] == 1){
-                UIImage *buttonImage = [UIImage imageNamed:@"star.png"];
+                UIImage *buttonImage = [UIImage imageNamed:@"Star.png"];
                 [Button24 setImage:buttonImage forState:UIControlStateNormal];
                 [self.view addSubview:Button24];
+                Button24.imageView.hidden = NO;
             }
             if(row3MetalMap[j] == 1){
-                UIImage *buttonImage = [UIImage imageNamed:@"star.png"];
+                UIImage *buttonImage = [UIImage imageNamed:@"Star.png"];
                 [Button34 setImage:buttonImage forState:UIControlStateNormal];
                 [self.view addSubview:Button34];
+                Button34.imageView.hidden = NO;
             }
             if(row4MetalMap[j] == 1){
-                UIImage *buttonImage = [UIImage imageNamed:@"star.png"];
+                UIImage *buttonImage = [UIImage imageNamed:@"Star.png"];
                 [Button44 setImage:buttonImage forState:UIControlStateNormal];
                 [self.view addSubview:Button44];
+                Button44.imageView.hidden = NO;
             }
-            
         }
-        
     }
     
     SumOfMagnetInColumn1.text = [NSString stringWithFormat:@"%i", expectedMagnetCountInColumn1];
