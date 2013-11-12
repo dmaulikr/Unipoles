@@ -567,6 +567,36 @@
     magnetCountGuessed = 0;
     result.hidden = YES;
     
+    Button11Pressed = NO;
+    Button12Pressed = NO;
+    Button13Pressed = NO;
+    Button14Pressed = NO;
+    Button21Pressed = NO;
+    Button22Pressed = NO;
+    Button23Pressed = NO;
+    Button24Pressed = NO;
+    Button31Pressed = NO;
+    Button32Pressed = NO;
+    Button33Pressed = NO;
+    Button34Pressed = NO;
+    Button41Pressed = NO;
+    Button42Pressed = NO;
+    Button43Pressed = NO;
+    Button44Pressed = NO;
+    
+    //Level 1 board
+    /*
+    int row1MagnetMap[4] = {1, 0, 0, 0};
+    int row2MagnetMap[4] = {0, 0, 0, 1};
+    int row3MagnetMap[4] = {0, 1, 0, 0};
+    int row4MagnetMap[4] = {0, 0, 0, 0};
+    
+    int row1MetalMap[4] = {0, 1, 0, 0};
+    int row2MetalMap[4] = {0, 0, 0, 0};
+    int row3MetalMap[4] = {1, 0, 0, 1};
+    int row4MetalMap[4] = {0, 0, 0, 0};
+    */
+    
     expectedMagnetCountInRow1 = 0;
     expectedMagnetCountInRow2 = 0;
     expectedMagnetCountInRow3 = 0;
@@ -743,7 +773,9 @@
 -(void)checkGameResult: (int) wrongGuessCount :(int) magnetCountGuessed {
     
     int  expectedMagnetCount = expectedMagnetCountInRow1 + expectedMagnetCountInRow2 + expectedMagnetCountInRow3 + expectedMagnetCountInRow4;
-    NSLog (@"Total magnet count to guess : %i",expectedMagnetCount);
+    //NSLog (@"Total magnet count to guess : %i",expectedMagnetCount);
+    NSLog (@"Remaining magnet count to guess : %i",(expectedMagnetCount - magnetCountGuessed));
+    NSLog (@"Wrong guess committed so far : %i", wrongGuessCount);
     if(wrongGuessCount > 2) {
         NSLog (@"Game over : you made %i wrong guess(es).", wrongGuessCount);
         result.text = @"Game Over!!!";

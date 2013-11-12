@@ -44,6 +44,17 @@ BOOL Button42Pressed = NO;
 BOOL Button43Pressed = NO;
 BOOL Button44Pressed = NO;
 
+/*
+int row1MagnetMap[4];
+int row2MagnetMap[4];
+int row3MagnetMap[4];
+int row4MagnetMap[4];
+
+int row1MetalMap[4];
+int row2MetalMap[4];
+int row3MetalMap[4];
+int row4MetalMap[4];
+ */
 int row1MagnetMap[4] = {1, 0, 0, 0};
 int row2MagnetMap[4] = {0, 0, 0, 1};
 int row3MagnetMap[4] = {0, 1, 0, 0};
@@ -109,6 +120,5 @@ int row4MetalMap[4] = {0, 0, 0, 0};
 //-(void)resetLevel;
 -(void)loadLocationOfMetals;
 -(void)checkGameResult:(int)a :(int)b;
-
 
 @end
