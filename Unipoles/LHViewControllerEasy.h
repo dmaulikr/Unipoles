@@ -13,6 +13,8 @@ int col = 4;
 int pushedRow;
 int pushedColumn;
 int numberOfMoves;
+int wrongGuessCount;
+int magnetCountGuessed;
 
 int expectedMagnetCountInColumn1;
 int expectedMagnetCountInColumn2;
@@ -54,7 +56,7 @@ int row4MetalMap[4] = {0, 0, 0, 0};
 
 @interface LHViewControllerEasy : UIViewController
 {
-    IBOutlet UIImageView *result;
+    IBOutlet UILabel *result;
     
     IBOutlet UIButton *Button11;
     IBOutlet UIButton *Button12;
@@ -106,7 +108,7 @@ int row4MetalMap[4] = {0, 0, 0, 0};
 -(void)initializeBoardToStartPlaying;
 //-(void)resetLevel;
 -(void)loadLocationOfMetals;
-
+-(void)checkGameResult:(int)a :(int)b;
 
 
 @end

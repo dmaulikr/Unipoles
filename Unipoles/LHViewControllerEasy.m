@@ -8,7 +8,7 @@
 
 #import "LHViewControllerEasy.h"
 
-NSNumber *magnetOnTile;
+//NSNumber *magnetOnTile;
 
 @interface LHViewControllerEasy ()
 
@@ -45,241 +45,512 @@ NSNumber *magnetOnTile;
     // Check if this is a "Metal" cell. If so, then do nothing
     // Check if button has been pressed, if so "un-press" it by removing the Magnet
 
-    if(Button11Pressed == YES) {
-        Button11Pressed = NO;
-        Button11.imageView.hidden = YES;
-    } else if (Button11Pressed == NO && !(row1MetalMap[0] == 1)) {
+    if(Button11Pressed == NO) { //was Button11Pressed == NO
+        if(row1MagnetMap[0]) {
+            UIImage *buttonImage = [UIImage imageNamed:@"first.png"];
+            [Button11 setImage:buttonImage forState:UIControlStateNormal];
+            [self.view addSubview:Button11];
+            magnetCountGuessed++;
+        } else if (row1MetalMap[0]) {
+            // Do nothing, keep Star.png displayed
+        } else { // Cell is not Magnet and Cell is not Metal
+            UIImage *buttonImage = [UIImage imageNamed:@"WrongGuess.png"];
+            [Button11 setImage:buttonImage forState:UIControlStateNormal];
+            [self.view addSubview:Button11];
+            wrongGuessCount++;
+        }
         Button11Pressed = YES;
-        UIImage *buttonImage = [UIImage imageNamed:@"first.png"];
-        [Button11 setImage:buttonImage forState:UIControlStateNormal];
-        [self.view addSubview:Button11];
-    }
-  
+    } /*else if (Button11Pressed == YES) {
+        if (row1MagnetMap[0]) {
+            // Do nothing : Magnet location already guessed correctly
+        } else if (row1MetalMap[0]) {
+            // Do nothing : this cell needs to have Star.png all the time
+        } else { // Cell is not Magnet and Cell is not Metal
+            // Do nothing : keep WrongGuess.png in this cell
+        }
+    }*/
+    Button11.imageView.hidden = NO;
+    [self checkGameResult:wrongGuessCount :magnetCountGuessed];
 }
 
 - (IBAction)Button12:(id)sender {
     pushedRow = 1;
     pushedColumn = 2;
     
-    if(Button12Pressed == YES) {
-        Button12Pressed = NO;
-        Button12.imageView.hidden = YES;
-    } else if (Button12Pressed == NO && !(row1MetalMap[1] == 1)) {
+    if(Button12Pressed == NO) { //was Button12Pressed == NO
+        if(row1MagnetMap[1]) {
+            UIImage *buttonImage = [UIImage imageNamed:@"first.png"];
+            [Button12 setImage:buttonImage forState:UIControlStateNormal];
+            [self.view addSubview:Button12];
+            magnetCountGuessed++;
+        } else if (row1MetalMap[1]) {
+            // Do nothing, keep Star.png displayed
+        } else { // Cell is not Magnet and Cell is not Metal
+            UIImage *buttonImage = [UIImage imageNamed:@"WrongGuess.png"];
+            [Button12 setImage:buttonImage forState:UIControlStateNormal];
+            [self.view addSubview:Button12];
+            wrongGuessCount++;
+        }
         Button12Pressed = YES;
-        UIImage *buttonImage = [UIImage imageNamed:@"first.png"];
-        [Button12 setImage:buttonImage forState:UIControlStateNormal];
-        [self.view addSubview:Button12];
+    } else if (Button12Pressed == YES) {
+        if (row1MagnetMap[1]) {
+            // Do nothing : Magnet location already guessed correctly
+        } else if (row1MetalMap[1]) {
+            // Do nothing : this cell needs to have Star.png all the time
+        } else { // Cell is not Magnet and Cell is not Metal
+            // Do nothing : keep WrongGuess.png in this cell
+        }
     }
+    Button12.imageView.hidden = NO;
+    [self checkGameResult:wrongGuessCount :magnetCountGuessed];
 }
 
 - (IBAction)Button13:(id)sender {
     pushedRow = 1;
     pushedColumn = 3;
     
-    if(Button13Pressed == YES) {
-        Button13Pressed = NO;
-        Button13.imageView.hidden = YES;
-    } else if (Button13Pressed == NO && !(row1MetalMap[2] == 1)) {
+    if(Button13Pressed == NO) { //was Button13Pressed == NO
+        if(row1MagnetMap[2]) {
+            UIImage *buttonImage = [UIImage imageNamed:@"first.png"];
+            [Button13 setImage:buttonImage forState:UIControlStateNormal];
+            [self.view addSubview:Button13];
+            magnetCountGuessed++;
+        } else if (row1MetalMap[2]) {
+            // Do nothing, keep Star.png displayed
+        } else { // Cell is not Magnet and Cell is not Metal
+            UIImage *buttonImage = [UIImage imageNamed:@"WrongGuess.png"];
+            [Button13 setImage:buttonImage forState:UIControlStateNormal];
+            [self.view addSubview:Button13];
+            wrongGuessCount++;
+        }
         Button13Pressed = YES;
-        UIImage *buttonImage = [UIImage imageNamed:@"first.png"];
-        [Button13 setImage:buttonImage forState:UIControlStateNormal];
-        [self.view addSubview:Button13];
+    } else if (Button11Pressed == YES) {
+        if (row1MagnetMap[2]) {
+            // Do nothing : Magnet location already guessed correctly
+        } else if (row1MetalMap[2]) {
+            // Do nothing : this cell needs to have Star.png all the time
+        } else { // Cell is not Magnet and Cell is not Metal
+            // Do nothing : keep WrongGuess.png in this cell
+        }
     }
-}
+    Button13.imageView.hidden = NO;
+    [self checkGameResult:wrongGuessCount :magnetCountGuessed];
+ }
 
 - (IBAction)Button14:(id)sender {
     pushedRow = 1;
     pushedColumn = 4;
     
-    if(Button14Pressed == YES) {
-        Button14Pressed = NO;
-        Button14.imageView.hidden = YES;
-    } else if (Button14Pressed == NO && !(row1MetalMap[3] == 1)) {
+    if(Button14Pressed == NO) { //was Button14Pressed == NO
+        if(row1MagnetMap[3]) {
+            UIImage *buttonImage = [UIImage imageNamed:@"first.png"];
+            [Button14 setImage:buttonImage forState:UIControlStateNormal];
+            [self.view addSubview:Button14];
+            magnetCountGuessed++;
+        } else if (row1MetalMap[3]) {
+            // Do nothing, keep Star.png displayed
+        } else { // Cell is not Magnet and Cell is not Metal
+            UIImage *buttonImage = [UIImage imageNamed:@"WrongGuess.png"];
+            [Button14 setImage:buttonImage forState:UIControlStateNormal];
+            [self.view addSubview:Button14];
+            wrongGuessCount++;
+        }
         Button14Pressed = YES;
-        UIImage *buttonImage = [UIImage imageNamed:@"first.png"];
-        [Button14 setImage:buttonImage forState:UIControlStateNormal];
-        [self.view addSubview:Button14];
+    } else if (Button14Pressed == YES) {
+        if (row1MagnetMap[3]) {
+            // Do nothing : Magnet location already guessed correctly
+        } else if (row1MetalMap[3]) {
+            // Do nothing : this cell needs to have Star.png all the time
+        } else { // Cell is not Magnet and Cell is not Metal
+            // Do nothing : keep WrongGuess.png in this cell
+        }
     }
+    Button14.imageView.hidden = NO;
+    [self checkGameResult:wrongGuessCount :magnetCountGuessed];
 }
 
 - (IBAction)Button21:(id)sender {
     pushedRow = 2;
     pushedColumn = 1;
     
-    if(Button21Pressed == YES) {
-        Button21Pressed = NO;
-        Button21.imageView.hidden = YES;
-    } else if (Button21Pressed == NO && !(row2MetalMap[0] == 1)) {
+    if(Button21Pressed == NO) { //was Button21Pressed == NO
+        if(row2MagnetMap[0]) {
+            UIImage *buttonImage = [UIImage imageNamed:@"first.png"];
+            [Button21 setImage:buttonImage forState:UIControlStateNormal];
+            [self.view addSubview:Button21];
+            magnetCountGuessed++;
+        } else if (row2MetalMap[0]) {
+            // Do nothing, keep Star.png displayed
+        } else { // Cell is not Magnet and Cell is not Metal
+            UIImage *buttonImage = [UIImage imageNamed:@"WrongGuess.png"];
+            [Button21 setImage:buttonImage forState:UIControlStateNormal];
+            [self.view addSubview:Button21];
+            wrongGuessCount++;
+        }
         Button21Pressed = YES;
-        UIImage *buttonImage = [UIImage imageNamed:@"first.png"];
-        [Button21 setImage:buttonImage forState:UIControlStateNormal];
-        [self.view addSubview:Button21];
+    } else if (Button21Pressed == YES) {
+        if (row2MagnetMap[0]) {
+            // Do nothing : Magnet location already guessed correctly
+        } else if (row2MetalMap[0]) {
+            // Do nothing : this cell needs to have Star.png all the time
+        } else { // Cell is not Magnet and Cell is not Metal
+            // Do nothing : keep WrongGuess.png in this cell
+        }
     }
+    Button21.imageView.hidden = NO;
+    [self checkGameResult:wrongGuessCount :magnetCountGuessed];
 }
 
 - (IBAction)Button22:(id)sender {
     pushedRow = 2;
     pushedColumn = 2;
     
-    if(Button22Pressed == YES) {
-        Button22Pressed = NO;
-        Button22.imageView.hidden = YES;
-    } else if (Button22Pressed == NO && !(row2MetalMap[1] == 1)) {
+    if(Button22Pressed == NO) { //was Button22Pressed == NO
+        if(row2MagnetMap[1]) {
+            UIImage *buttonImage = [UIImage imageNamed:@"first.png"];
+            [Button22 setImage:buttonImage forState:UIControlStateNormal];
+            [self.view addSubview:Button22];
+            magnetCountGuessed++;
+        } else if (row2MetalMap[1]) {
+            // Do nothing, keep Star.png displayed
+        } else { // Cell is not Magnet and Cell is not Metal
+            UIImage *buttonImage = [UIImage imageNamed:@"WrongGuess.png"];
+            [Button22 setImage:buttonImage forState:UIControlStateNormal];
+            [self.view addSubview:Button22];
+            wrongGuessCount++;
+        }
         Button22Pressed = YES;
-        UIImage *buttonImage = [UIImage imageNamed:@"first.png"];
-        [Button22 setImage:buttonImage forState:UIControlStateNormal];
-        [self.view addSubview:Button22];
+    } else if (Button22Pressed == YES) {
+        if (row2MagnetMap[1]) {
+            // Do nothing : Magnet location already guessed correctly
+        } else if (row2MetalMap[1]) {
+            // Do nothing : this cell needs to have Star.png all the time
+        } else { // Cell is not Magnet and Cell is not Metal
+            // Do nothing : keep WrongGuess.png in this cell
+        }
     }
+    Button22.imageView.hidden = NO;
+    [self checkGameResult:wrongGuessCount :magnetCountGuessed];
 }
 
 - (IBAction)Button23:(id)sender {
     pushedRow = 2;
     pushedColumn = 3;
     
-    if(Button23Pressed == YES) {
-        Button23Pressed = NO;
-        Button23.imageView.hidden = YES;
-    } else if (Button23Pressed == NO && !(row2MetalMap[2] == 1)) {
+    if(Button23Pressed == NO) { //was Button23Pressed == NO
+        if(row2MagnetMap[2]) {
+            UIImage *buttonImage = [UIImage imageNamed:@"first.png"];
+            [Button23 setImage:buttonImage forState:UIControlStateNormal];
+            [self.view addSubview:Button23];
+            magnetCountGuessed++;
+        } else if (row2MetalMap[2]) {
+            // Do nothing, keep Star.png displayed
+        } else { // Cell is not Magnet and Cell is not Metal
+            UIImage *buttonImage = [UIImage imageNamed:@"WrongGuess.png"];
+            [Button23 setImage:buttonImage forState:UIControlStateNormal];
+            [self.view addSubview:Button23];
+            wrongGuessCount++;
+        }
         Button23Pressed = YES;
-        UIImage *buttonImage = [UIImage imageNamed:@"first.png"];
-        [Button23 setImage:buttonImage forState:UIControlStateNormal];
-        [self.view addSubview:Button23];
+    } else if (Button23Pressed == YES) {
+        if (row2MagnetMap[2]) {
+            // Do nothing : Magnet location already guessed correctly
+        } else if (row2MetalMap[2]) {
+            // Do nothing : this cell needs to have Star.png all the time
+        } else { // Cell is not Magnet and Cell is not Metal
+            // Do nothing : keep WrongGuess.png in this cell
+        }
     }
+    Button23.imageView.hidden = NO;
+    [self checkGameResult:wrongGuessCount :magnetCountGuessed];
 }
 
 - (IBAction)Button24:(id)sender {
     pushedRow = 2;
     pushedColumn = 4;
     
-    if(Button24Pressed == YES) {
-        Button24Pressed = NO;
-        Button24.imageView.hidden = YES;
-    } else if (Button24Pressed == NO && !(row2MetalMap[3] == 1)) {
+    if(Button24Pressed == NO) { //was Button24Pressed == NO
+        if(row2MagnetMap[3]) {
+            UIImage *buttonImage = [UIImage imageNamed:@"first.png"];
+            [Button24 setImage:buttonImage forState:UIControlStateNormal];
+            [self.view addSubview:Button24];
+            magnetCountGuessed++;
+        } else if (row2MetalMap[3]) {
+            // Do nothing, keep Star.png displayed
+        } else { // Cell is not Magnet and Cell is not Metal
+            UIImage *buttonImage = [UIImage imageNamed:@"WrongGuess.png"];
+            [Button24 setImage:buttonImage forState:UIControlStateNormal];
+            [self.view addSubview:Button24];
+            wrongGuessCount++;
+        }
         Button24Pressed = YES;
-        UIImage *buttonImage = [UIImage imageNamed:@"first.png"];
-        [Button24 setImage:buttonImage forState:UIControlStateNormal];
-        [self.view addSubview:Button24];
+    } else if (Button24Pressed == YES) {
+        if (row2MagnetMap[3]) {
+            // Do nothing : Magnet location already guessed correctly
+        } else if (row2MetalMap[3]) {
+            // Do nothing : this cell needs to have Star.png all the time
+        } else { // Cell is not Magnet and Cell is not Metal
+            // Do nothing : keep WrongGuess.png in this cell
+        }
     }
+    Button24.imageView.hidden = NO;
+    [self checkGameResult:wrongGuessCount :magnetCountGuessed];
 }
 
 - (IBAction)Button31:(id)sender {
     pushedRow = 3;
     pushedColumn = 1;
     
-    if(Button31Pressed == YES) {
-        Button31Pressed = NO;
-        Button31.imageView.hidden = YES;
-    } else if (Button31Pressed == NO && !(row3MetalMap[0] == 1)) {
+    if(Button31Pressed == NO) { //was Button31Pressed == NO
+        if(row3MagnetMap[0]) {
+            UIImage *buttonImage = [UIImage imageNamed:@"first.png"];
+            [Button31 setImage:buttonImage forState:UIControlStateNormal];
+            [self.view addSubview:Button31];
+            magnetCountGuessed++;
+        } else if (row3MetalMap[0]) {
+            // Do nothing, keep Star.png displayed
+        } else { // Cell is not Magnet and Cell is not Metal
+            UIImage *buttonImage = [UIImage imageNamed:@"WrongGuess.png"];
+            [Button31 setImage:buttonImage forState:UIControlStateNormal];
+            [self.view addSubview:Button31];
+            wrongGuessCount++;
+        }
         Button31Pressed = YES;
-        UIImage *buttonImage = [UIImage imageNamed:@"first.png"];
-        [Button31 setImage:buttonImage forState:UIControlStateNormal];
-        [self.view addSubview:Button31];
+    } else if (Button31Pressed == YES) {
+        if (row3MagnetMap[0]) {
+            // Do nothing : Magnet location already guessed correctly
+        } else if (row3MetalMap[0]) {
+            // Do nothing : this cell needs to have Star.png all the time
+        } else { // Cell is not Magnet and Cell is not Metal
+            // Do nothing : keep WrongGuess.png in this cell
+        }
     }
+    Button31.imageView.hidden = NO;
+    [self checkGameResult:wrongGuessCount :magnetCountGuessed];
 }
 
 - (IBAction)Button32:(id)sender {
     pushedRow = 3;
     pushedColumn = 2;
     
-    if(Button32Pressed == YES) {
-        Button32Pressed = NO;
-        Button32.imageView.hidden = YES;
-    } else if (Button32Pressed == NO && !(row3MetalMap[1] == 1)) {
+    if(Button32Pressed == NO) { //was Button32Pressed == NO
+        if(row3MagnetMap[1]) {
+            UIImage *buttonImage = [UIImage imageNamed:@"first.png"];
+            [Button32 setImage:buttonImage forState:UIControlStateNormal];
+            [self.view addSubview:Button32];
+            magnetCountGuessed++;
+        } else if (row3MetalMap[1]) {
+            // Do nothing, keep Star.png displayed
+        } else { // Cell is not Magnet and Cell is not Metal
+            UIImage *buttonImage = [UIImage imageNamed:@"WrongGuess.png"];
+            [Button32 setImage:buttonImage forState:UIControlStateNormal];
+            [self.view addSubview:Button32];
+            wrongGuessCount++;
+        }
         Button32Pressed = YES;
-        UIImage *buttonImage = [UIImage imageNamed:@"first.png"];
-        [Button32 setImage:buttonImage forState:UIControlStateNormal];
-        [self.view addSubview:Button32];
+    } else if (Button32Pressed == YES) {
+        if (row3MagnetMap[1]) {
+            // Do nothing : Magnet location already guessed correctly
+        } else if (row3MetalMap[1]) {
+            // Do nothing : this cell needs to have Star.png all the time
+        } else { // Cell is not Magnet and Cell is not Metal
+            // Do nothing : keep WrongGuess.png in this cell
+        }
     }
+    Button32.imageView.hidden = NO;
+    [self checkGameResult:wrongGuessCount :magnetCountGuessed];
 }
 
 - (IBAction)Button33:(id)sender {
     pushedRow = 3;
     pushedColumn = 3;
     
-    if(Button33Pressed == YES) {
-        Button33Pressed = NO;
-        Button33.imageView.hidden = YES;
-    } else if (Button33Pressed == NO && !(row3MetalMap[2] == 1)) {
+    if(Button33Pressed == NO) { //was Button33Pressed == NO
+        if(row3MagnetMap[2]) {
+            UIImage *buttonImage = [UIImage imageNamed:@"first.png"];
+            [Button33 setImage:buttonImage forState:UIControlStateNormal];
+            [self.view addSubview:Button33];
+            magnetCountGuessed++;
+        } else if (row3MetalMap[2]) {
+            // Do nothing, keep Star.png displayed
+        } else { // Cell is not Magnet and Cell is not Metal
+            UIImage *buttonImage = [UIImage imageNamed:@"WrongGuess.png"];
+            [Button33 setImage:buttonImage forState:UIControlStateNormal];
+            [self.view addSubview:Button33];
+            wrongGuessCount++;
+        }
         Button33Pressed = YES;
-        UIImage *buttonImage = [UIImage imageNamed:@"first.png"];
-        [Button33 setImage:buttonImage forState:UIControlStateNormal];
-        [self.view addSubview:Button33];
+    } else if (Button33Pressed == YES) {
+        if (row3MagnetMap[2]) {
+            // Do nothing : Magnet location already guessed correctly
+        } else if (row3MetalMap[2]) {
+            // Do nothing : this cell needs to have Star.png all the time
+        } else { // Cell is not Magnet and Cell is not Metal
+            // Do nothing : keep WrongGuess.png in this cell
+        }
     }
+    Button33.imageView.hidden = NO;
+    [self checkGameResult:wrongGuessCount :magnetCountGuessed];
 }
 
 - (IBAction)Button34:(id)sender {
     pushedRow = 3;
     pushedColumn = 4;
     
-    if(Button34Pressed == YES) {
-        Button34Pressed = NO;
-        Button34.imageView.hidden = YES;
-    } else if (Button34Pressed == NO && !(row3MetalMap[3] == 1)) {
+    if(Button34Pressed == NO) { //was Button34Pressed == NO
+        if(row3MagnetMap[3]) {
+            UIImage *buttonImage = [UIImage imageNamed:@"first.png"];
+            [Button34 setImage:buttonImage forState:UIControlStateNormal];
+            [self.view addSubview:Button34];
+            magnetCountGuessed++;
+        } else if (row3MetalMap[3]) {
+            // Do nothing, keep Star.png displayed
+        } else { // Cell is not Magnet and Cell is not Metal
+            UIImage *buttonImage = [UIImage imageNamed:@"WrongGuess.png"];
+            [Button34 setImage:buttonImage forState:UIControlStateNormal];
+            [self.view addSubview:Button34];
+            wrongGuessCount++;
+        }
         Button34Pressed = YES;
-        UIImage *buttonImage = [UIImage imageNamed:@"first.png"];
-        [Button34 setImage:buttonImage forState:UIControlStateNormal];
-        [self.view addSubview:Button34];
+    } else if (Button34Pressed == YES) {
+        if (row3MagnetMap[3]) {
+            // Do nothing : Magnet location already guessed correctly
+        } else if (row3MetalMap[3]) {
+            // Do nothing : this cell needs to have Star.png all the time
+        } else { // Cell is not Magnet and Cell is not Metal
+            // Do nothing : keep WrongGuess.png in this cell
+        }
     }
+    Button34.imageView.hidden = NO;
+    [self checkGameResult:wrongGuessCount :magnetCountGuessed];
 }
 
 - (IBAction)Button41:(id)sender {
     pushedRow = 4;
     pushedColumn = 1;
     
-    if(Button41Pressed == YES) {
-        Button41Pressed = NO;
-        Button41.imageView.hidden = YES;
-    } else if (Button41Pressed == NO && !(row4MetalMap[0] == 1)) {
+    if(Button41Pressed == NO) { //was Button41Pressed == NO
+        if(row4MagnetMap[0]) {
+            UIImage *buttonImage = [UIImage imageNamed:@"first.png"];
+            [Button41 setImage:buttonImage forState:UIControlStateNormal];
+            [self.view addSubview:Button41];
+            magnetCountGuessed++;
+        } else if (row4MetalMap[0]) {
+            // Do nothing, keep Star.png displayed
+        } else { // Cell is not Magnet and Cell is not Metal
+            UIImage *buttonImage = [UIImage imageNamed:@"WrongGuess.png"];
+            [Button41 setImage:buttonImage forState:UIControlStateNormal];
+            [self.view addSubview:Button41];
+            wrongGuessCount++;
+        }
         Button41Pressed = YES;
-        UIImage *buttonImage = [UIImage imageNamed:@"first.png"];
-        [Button41 setImage:buttonImage forState:UIControlStateNormal];
-        [self.view addSubview:Button41];
+    } else if (Button41Pressed == YES) {
+        if (row4MagnetMap[0]) {
+            // Do nothing : Magnet location already guessed correctly
+        } else if (row4MetalMap[0]) {
+            // Do nothing : this cell needs to have Star.png all the time
+        } else { // Cell is not Magnet and Cell is not Metal
+            // Do nothing : keep WrongGuess.png in this cell
+        }
     }
+    Button41.imageView.hidden = NO;
+    [self checkGameResult:wrongGuessCount :magnetCountGuessed];
 }
 
 - (IBAction)Button42:(id)sender {
     pushedRow = 4;
     pushedColumn = 2;
     
-    if(Button42Pressed == YES) {
-        Button42Pressed = NO;
-        Button42.imageView.hidden = YES;
-    } else if (Button42Pressed == NO && !(row4MetalMap[1] == 1)) {
+    if(Button42Pressed == NO) { //was Button42Pressed == NO
+        if(row4MagnetMap[1]) {
+            UIImage *buttonImage = [UIImage imageNamed:@"first.png"];
+            [Button42 setImage:buttonImage forState:UIControlStateNormal];
+            [self.view addSubview:Button42];
+            magnetCountGuessed++;
+        } else if (row4MetalMap[1]) {
+            // Do nothing, keep Star.png displayed
+        } else { // Cell is not Magnet and Cell is not Metal
+            UIImage *buttonImage = [UIImage imageNamed:@"WrongGuess.png"];
+            [Button42 setImage:buttonImage forState:UIControlStateNormal];
+            [self.view addSubview:Button42];
+            wrongGuessCount++;
+        }
         Button42Pressed = YES;
-        UIImage *buttonImage = [UIImage imageNamed:@"first.png"];
-        [Button42 setImage:buttonImage forState:UIControlStateNormal];
-        [self.view addSubview:Button42];
+    } else if (Button42Pressed == YES) {
+        if (row4MagnetMap[1]) {
+            // Do nothing : Magnet location already guessed correctly
+        } else if (row4MetalMap[1]) {
+            // Do nothing : this cell needs to have Star.png all the time
+        } else { // Cell is not Magnet and Cell is not Metal
+            // Do nothing : keep WrongGuess.png in this cell
+        }
     }
+    Button42.imageView.hidden = NO;
+    [self checkGameResult:wrongGuessCount :magnetCountGuessed];
 }
 
 - (IBAction)Button43:(id)sender {
     pushedRow = 4;
     pushedColumn = 3;
     
-    if(Button43Pressed == YES) {
-        Button43Pressed = NO;
-        Button43.imageView.hidden = YES;
-    } else if (Button43Pressed == NO && !(row4MetalMap[2] == 1)) {
+    if(Button43Pressed == NO) { //was Button43Pressed == NO
+        if(row4MagnetMap[2]) {
+            UIImage *buttonImage = [UIImage imageNamed:@"first.png"];
+            [Button43 setImage:buttonImage forState:UIControlStateNormal];
+            [self.view addSubview:Button43];
+            magnetCountGuessed++;
+        } else if (row4MetalMap[2]) {
+            // Do nothing, keep Star.png displayed
+        } else { // Cell is not Magnet and Cell is not Metal
+            UIImage *buttonImage = [UIImage imageNamed:@"WrongGuess.png"];
+            [Button43 setImage:buttonImage forState:UIControlStateNormal];
+            [self.view addSubview:Button43];
+            wrongGuessCount++;
+        }
         Button43Pressed = YES;
-        UIImage *buttonImage = [UIImage imageNamed:@"first.png"];
-        [Button43 setImage:buttonImage forState:UIControlStateNormal];
-        [self.view addSubview:Button43];
+    } else if (Button43Pressed == YES) {
+        if (row4MagnetMap[2]) {
+            // Do nothing : Magnet location already guessed correctly
+        } else if (row4MetalMap[2]) {
+            // Do nothing : this cell needs to have Star.png all the time
+        } else { // Cell is not Magnet and Cell is not Metal
+            // Do nothing : keep WrongGuess.png in this cell
+        }
     }
+    Button43.imageView.hidden = NO;
+    [self checkGameResult:wrongGuessCount :magnetCountGuessed];
 }
 
 - (IBAction)Button44:(id)sender {
     pushedRow = 4;
     pushedColumn = 4;
     
-    if(Button44Pressed == YES) {
-        Button44Pressed = NO;
-        Button44.imageView.hidden = YES;
-    } else if (Button44Pressed == NO && !(row4MetalMap[3] == 1)) {
+    if(Button44Pressed == NO) { //was Button44Pressed == NO
+        if(row4MagnetMap[3]) {
+            UIImage *buttonImage = [UIImage imageNamed:@"first.png"];
+            [Button44 setImage:buttonImage forState:UIControlStateNormal];
+            [self.view addSubview:Button44];
+            magnetCountGuessed++;
+        } else if (row4MetalMap[3]) {
+            // Do nothing, keep Star.png displayed
+        } else { // Cell is not Magnet and Cell is not Metal
+            UIImage *buttonImage = [UIImage imageNamed:@"WrongGuess.png"];
+            [Button44 setImage:buttonImage forState:UIControlStateNormal];
+            [self.view addSubview:Button44];
+            wrongGuessCount++;
+        }
         Button44Pressed = YES;
-        UIImage *buttonImage = [UIImage imageNamed:@"first.png"];
-        [Button44 setImage:buttonImage forState:UIControlStateNormal];
-        [self.view addSubview:Button44];
+    } else if (Button44Pressed == YES) {
+        if (row4MagnetMap[3]) {
+            // Do nothing : Magnet location already guessed correctly
+        } else if (row4MetalMap[3]) {
+            // Do nothing : this cell needs to have Star.png all the time
+        } else { // Cell is not Magnet and Cell is not Metal
+            // Do nothing : keep WrongGuess.png in this cell
+        }
     }
+    Button44.imageView.hidden = NO;
+    [self checkGameResult:wrongGuessCount :magnetCountGuessed];
 }
 
 -(void)loadLocationOfMetals {
@@ -292,6 +563,19 @@ NSNumber *magnetOnTile;
 }
 
 -(void)initializeBoardToStartPlaying {
+    wrongGuessCount = 0;
+    magnetCountGuessed = 0;
+    result.hidden = YES;
+    
+    expectedMagnetCountInRow1 = 0;
+    expectedMagnetCountInRow2 = 0;
+    expectedMagnetCountInRow3 = 0;
+    expectedMagnetCountInRow4 = 0;
+    
+    expectedMagnetCountInColumn1 = 0;
+    expectedMagnetCountInColumn2 = 0;
+    expectedMagnetCountInColumn3 = 0;
+    expectedMagnetCountInColumn4 = 0;
     
     Button11.imageView.hidden = YES;
     Button12.imageView.hidden = YES;
@@ -309,16 +593,6 @@ NSNumber *magnetOnTile;
     Button42.imageView.hidden = YES;
     Button43.imageView.hidden = YES;
     Button44.imageView.hidden = YES;
-    
-    expectedMagnetCountInRow1 = 0;
-    expectedMagnetCountInRow2 = 0;
-    expectedMagnetCountInRow3 = 0;
-    expectedMagnetCountInRow4 = 0;
-    
-    expectedMagnetCountInColumn1 = 0;
-    expectedMagnetCountInColumn2 = 0;
-    expectedMagnetCountInColumn3 = 0;
-    expectedMagnetCountInColumn4 = 0;
     
     for(int j=0;j<col;j++){
         expectedMagnetCountInRow1+=row1MagnetMap[j];
@@ -463,6 +737,24 @@ NSNumber *magnetOnTile;
     SumOfMagnetInRow2.text = [NSString stringWithFormat:@"%i", expectedMagnetCountInRow2];
     SumOfMagnetInRow3.text = [NSString stringWithFormat:@"%i", expectedMagnetCountInRow3];
     SumOfMagnetInRow4.text = [NSString stringWithFormat:@"%i", expectedMagnetCountInRow4];
+ }
+
+
+-(void)checkGameResult: (int) wrongGuessCount :(int) magnetCountGuessed {
+    
+    int  expectedMagnetCount = expectedMagnetCountInRow1 + expectedMagnetCountInRow2 + expectedMagnetCountInRow3 + expectedMagnetCountInRow4;
+    NSLog (@"Total magnet count to guess : %i",expectedMagnetCount);
+    if(wrongGuessCount > 2) {
+        NSLog (@"Game over : you made %i wrong guess(es).", wrongGuessCount);
+        result.text = @"Game Over!!!";
+        result.hidden = NO;
+    } else if (magnetCountGuessed == expectedMagnetCount) {
+        NSLog (@"You win : you guessed all %i magnets.", expectedMagnetCount);
+        result.text = @"You win!";
+        result.hidden = NO;
+    } else {
+        // keep on guessing
+    }    
  }
 
 
